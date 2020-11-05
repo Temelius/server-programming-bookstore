@@ -48,6 +48,7 @@ public class BookstoreApplication {
 			brepository.save(new Book("J. K. Rowling", "Harry Potter and the Deathly Hallows", "978-951-31-4004-5", "2007", crepository.findByName("Fantasy").get(0)));
 			brepository.save(new Book("Douglas Adams", "The Hitchhiker's Guide to the Galaxy", "0-330-25864-8", "1979", crepository.findByName("Sci-Fi").get(0)));
 			
+			urepository.deleteAll();
 			urepository.save(new User("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER", "user@bookstore.fi"));
 			urepository.save(new User("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN", "admin@bookstore.fi"));
 
