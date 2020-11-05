@@ -28,6 +28,7 @@ public class BookstoreApplication {
 	public CommandLineRunner Bookstore(BookstoreRepository brepository, CategoryRepository crepository, UserRepository urepository) {
 		return (args) -> {
 			
+			crepository.deleteAll();
 			crepository.save(new Category("Fantasy"));
 			crepository.save(new Category("Comics"));
 			crepository.save(new Category("Manga"));
@@ -37,6 +38,7 @@ public class BookstoreApplication {
 			crepository.save(new Category("Satire"));
 			crepository.save(new Category("Programming"));
 			
+			brepository.deleteAll();
 			brepository.save(new Book("Ernest Hemingway", "A Farewell to Arms", "1232323-21", "1929", crepository.findByName("Realism").get(0)));
 			brepository.save(new Book("George Orwell", "Animal Farm", "2212343-5", "1945", crepository.findByName("Satire").get(0)));
 			brepository.save(new Book("J. K. Rowling", "Harry Potter and the Philosopher’s Stone", "951-31-1146-6", "1997", crepository.findByName("Fantasy").get(0)));
